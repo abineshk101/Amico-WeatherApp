@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon sever.js"
+    "start": "nodemon app.js -e js,json,hbs,css,html"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +19,5 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.2"
-  },
-  "nodemonConfig": {
-    "ext": "js,json,hbs,css,html"
   }
 }

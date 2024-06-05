@@ -5,6 +5,7 @@ const geocode=require('../weather-app/utils/geocode')
 const geoplace=require('../web-server/utils/geoplace')
 
 const app=express()
+const port=3000
 
 /// Define path for Express config
 const indexPath=path.join(__dirname,'/public')
@@ -18,10 +19,6 @@ hbs.registerPartials(partialPath)
 
 /// setup static dictionary to use
 app.use(express.static(indexPath))
-
-app.listen(3000,()=>{
-    console.log("The server is on 3000")
-})
 
 app.get("",(req,res)=>{
     res.render('index',{
@@ -58,16 +55,18 @@ app.get('/weather',(req,res)=>{
         if (error){
             return res.send.error
         }
-        geoplace(lattitude,longitude,(forcastError,{climate,current_temp,place})=>{
+        geoplace(lattitude,longitude,(forcastError,{climate,current_temp,place,temp_min,temp_max})=>{
             if(forcastError){
                 return res.send.forcastError
             }
         res.send({
-            lattitude,
+            lattitude,                                                                                                                                                                                                      
             longitude,
             climate,
             current_temp,
-            place
+            place,
+            temp_min,
+            temp_max
         })
         })
     })
@@ -92,6 +91,9 @@ app.get('*',(req,res)=>{
     })
 })
 
+app.listen(port,()=>{
+    console.log("The http://localhost:"+port)
+})
 
 // const newPath=path.join(__dirname,'foldername_to_change')
 // app.use('views',newPath)

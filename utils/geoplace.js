@@ -9,10 +9,13 @@ const geoplace = (lat, lon, callback) => {
             callback('Please enter the correct details', undefined)
         } else {
             const state = response.body.main
+            console.log(state.temp_min)
             callback(undefined, {
                 'climate': response.body.weather[0].description,
                 'current_temp': state.temp,
-                'place':response.body.name
+                'place':response.body.name,
+                'temp_min':state.temp_min,
+                'temp_max':state.temp_max
             })
         }
     })

@@ -1,0 +1,73 @@
+body{
+    background-color: rgba(166, 166, 175, 0.041);
+}
+
+#text-content{
+    margin: 0% 20% 0% 19%;
+}
+
+h1{
+    color: rgb(10, 17, 4);
+    font-family: "arial";
+}
+
+h2{
+    color: rgb(44, 51, 116);
+}
+
+header {
+    padding: 10px 0px 90px 0px;
+
+}
+a{
+    color: rgb(78, 78, 78);
+    text-decoration: none;
+    margin-right: 20px;
+    font-family:Arial;
+    opacity: 0.5;
+}
+
+a:hover{
+    opacity: 2;
+}
+
+footer{
+    color: rgb(12, 12, 1);
+    position:fixed;
+    width: 100%;
+    bottom: 0px;
+    font-family:'Trebuchet MS';
+}
+
+input{
+    min-height:25px;
+    border:2px solid dimgray;
+
+}
+
+button{
+    cursor: pointer;
+    min-height:30px;
+    color: floralwhite;
+    background-color: rgb(63, 62, 62);
+    border: 0px;
+    border-radius:5px;
+    opacity: 0.4;    
+}
+button:hover{
+    opacity: 3;
+}
+
+
+
+button:active{
+    box-shadow:grey;
+    transform:translateY(4px);
+}
+
+#message1{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#message2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
